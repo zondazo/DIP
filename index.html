@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бронювання практикуму DIP</title>
+    <title>DIP Практикуми</title>
     <style>
-        body { margin: 0; font-family: sans-serif; display: flex; justify-content: center; background-color: #f4f4f9; }
-        iframe { width: 100%; height: 100vh; border: none; }
+        body { font-family: sans-serif; background-color: #f4f4f9; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .menu-container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 90%; }
+        h1 { color: #333; margin-bottom: 30px; }
+        .btn { display: block; background-color: #0088cc; color: white; padding: 15px; margin: 10px 0; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; }
+        .btn:hover { background-color: #0077b3; }
+        .btn-secondary { background-color: #6c757d; }
+        .btn-secondary:hover { background-color: #5a6268; }
     </style>
 </head>
 <body>
-    <h1>Бронювання практикуму DI</h1>
-    <!-- ВСТАВТЕ ВАШ EMBED КОД ВІД TALLY НИЖЧЕ-->
-    <iframe src="https://tally.so/embed/J9V5O7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="DIP Form"></iframe>
-    <script async src="https://tally.so/widgets/embed.js"></script>
+    <div class="menu-container">
+        <h1>Практикуми DIP</h1>
+        <p>Оберіть потрібну дію:</p>
+        <a href="deposit.html" class="btn">Бронювання місця (депозит 1000 грн)</a>
+        <a href="waitlist.html" class="btn btn-secondary">Лист очікування</a>
+    </div>
 </body>
 </html>
